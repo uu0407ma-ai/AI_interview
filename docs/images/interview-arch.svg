@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <!-- 背景和标题 -->
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+  <text x="450" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#212529">AI智能面试系统架构图</text>
+  
+  <!-- 前端层 -->
+  <rect x="50" y="80" width="800" height="100" rx="10" ry="10" fill="#e9ecef" stroke="#ced4da" stroke-width="2"/>
+  <text x="450" y="110" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#495057">前端 (Vue.js + Bootstrap)</text>
+  
+  <rect x="100" y="130" width="150" height="40" rx="5" ry="5" fill="#fff" stroke="#ced4da" stroke-width="1"/>
+  <text x="175" y="155" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">招聘管理界面</text>
+  
+  <rect x="300" y="130" width="150" height="40" rx="5" ry="5" fill="#fff" stroke="#ced4da" stroke-width="1"/>
+  <text x="375" y="155" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">候选人管理界面</text>
+  
+  <rect x="500" y="130" width="150" height="40" rx="5" ry="5" fill="#fff" stroke="#ced4da" stroke-width="1"/>
+  <text x="575" y="155" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">面试界面</text>
+  
+  <rect x="650" y="130" width="150" height="40" rx="5" ry="5" fill="#fff" stroke="#ced4da" stroke-width="1"/>
+  <text x="725" y="155" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">报告查看界面</text>
+  
+  <!-- 后端API层 -->
+  <rect x="50" y="220" width="800" height="100" rx="10" ry="10" fill="#e7f5ff" stroke="#a5d8ff" stroke-width="2"/>
+  <text x="450" y="250" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#1971c2">后端 (Flask RESTful API)</text>
+  
+  <rect x="100" y="270" width="150" height="40" rx="5" ry="5" fill="#fff" stroke="#a5d8ff" stroke-width="1"/>
+  <text x="175" y="295" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">岗位管理API</text>
+  
+  <rect x="300" y="270" width="150" height="40" rx="5" ry="5" fill="#fff" stroke="#a5d8ff" stroke-width="1"/>
+  <text x="375" y="295" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">候选人管理API</text>
+  
+  <rect x="500" y="270" width="150" height="40" rx="5" ry="5" fill="#fff" stroke="#a5d8ff" stroke-width="1"/>
+  <text x="575" y="295" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">面试流程API</text>
+  
+  <rect x="650" y="270" width="150" height="40" rx="5" ry="5" fill="#fff" stroke="#a5d8ff" stroke-width="1"/>
+  <text x="725" y="295" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">报告生成API</text>
+  
+  <!-- 处理服务层 -->
+  <rect x="50" y="360" width="800" height="160" rx="10" ry="10" fill="#ebfbee" stroke="#b2f2bb" stroke-width="2"/>
+  <text x="450" y="390" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#2b8a3e">自动化处理服务</text>
+  
+  <rect x="100" y="410" width="330" height="90" rx="5" ry="5" fill="#fff" stroke="#b2f2bb" stroke-width="1"/>
+  <text x="265" y="435" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#495057">面试问题生成服务</text>
+  <text x="265" y="460" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">generate_interview_questions.py</text>
+  <text x="265" y="485" font-family="Arial" font-size="12" text-anchor="middle" fill="#495057">(定时检查并生成面试问题)</text>
+  
+  <rect x="470" y="410" width="330" height="90" rx="5" ry="5" fill="#fff" stroke="#b2f2bb" stroke-width="1"/>
+  <text x="635" y="435" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#495057">面试报告生成服务</text>
+  <text x="635" y="460" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">generate_interview_reports.py</text>
+  <text x="635" y="485" font-family="Arial" font-size="12" text-anchor="middle" fill="#495057">(定时检查并生成面试评估报告)</text>
+  
+  <!-- AI服务层 -->
+  <rect x="50" y="560" width="350" height="110" rx="10" ry="10" fill="#fff4e6" stroke="#ffd8a8" stroke-width="2"/>
+  <text x="225" y="590" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#e8590c">AI服务</text>
+  
+  <rect x="100" y="610" width="120" height="40" rx="5" ry="5" fill="#fff" stroke="#ffd8a8" stroke-width="1"/>
+  <text x="160" y="635" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">GLM-4-plus</text>
+  
+  <rect x="240" y="610" width="120" height="40" rx="5" ry="5" fill="#fff" stroke="#ffd8a8" stroke-width="1"/>
+  <text x="300" y="635" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">Whisper语音识别</text>
+  
+  <!-- 数据存储层 -->
+  <rect x="450" y="560" width="400" height="110" rx="10" ry="10" fill="#edf2ff" stroke="#bac8ff" stroke-width="2"/>
+  <text x="650" y="590" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#4c6ef5">数据存储</text>
+  
+  <rect x="500" y="610" width="120" height="40" rx="5" ry="5" fill="#fff" stroke="#bac8ff" stroke-width="1"/>
+  <text x="560" y="635" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">SQLite数据库</text>
+  
+  <rect x="650" y="610" width="150" height="40" rx="5" ry="5" fill="#fff" stroke="#bac8ff" stroke-width="1"/>
+  <text x="725" y="635" font-family="Arial" font-size="14" text-anchor="middle" fill="#495057">静态文件/录音存储</text>
+  
+  <!-- 连接线和箭头 -->
+  <!-- 前端到API的连接 -->
+  <path d="M450,180 L450,220" stroke="#adb5bd" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="450,220 445,210 455,210" fill="#adb5bd"/>
+  
+  <!-- API到处理服务的连接 -->
+  <path d="M450,320 L450,360" stroke="#adb5bd" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="450,360 445,350 455,350" fill="#adb5bd"/>
+  
+  <!-- 处理服务到AI服务的连接 -->
+  <path d="M265,500 L265,560" stroke="#adb5bd" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="265,560 260,550 270,550" fill="#adb5bd"/>
+  
+  <!-- 处理服务到数据存储的连接 -->
+  <path d="M635,500 L635,560" stroke="#adb5bd" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="635,560 630,550 640,550" fill="#adb5bd"/>
+  
+  <!-- 服务之间的横向连接 -->
+  <path d="M340,450 L470,450" stroke="#adb5bd" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="470,450 460,445 460,455" fill="#adb5bd"/>
+  
+  <!-- 图例 -->
+  <rect x="720" y="40" width="120" height="20" rx="5" ry="5" fill="#fff" stroke="#ced4da" stroke-width="1"/>
+  <text x="780" y="55" font-family="Arial" font-size="12" text-anchor="middle" fill="#495057">数据流向</text>
+</svg>

@@ -1,0 +1,55 @@
+flowchart TD
+    %% 主要流程
+    Start([系统启动]) --> AdminAccess[管理员访问系统]
+    AdminAccess --> CreatePosition[创建招聘岗位]
+    CreatePosition --> AddCandidate[添加候选人信息/上传简历]
+    AddCandidate --> CreateInterview[创建面试安排]
+    
+    %% 面试问题生成子流程
+    CreateInterview --> QuestionGeneration[面试问题生成服务]
+    QuestionGeneration --> ExtractResume[提取简历内容]
+    ExtractResume --> AnalyzePosition[分析岗位要求]
+    AnalyzePosition --> GenerateQuestions[AI生成面试问题]
+    GenerateQuestions --> SaveQuestions[保存问题到数据库]
+    SaveQuestions --> ShareLink[管理员复制面试链接]
+    
+    %% 候选人面试流程
+    ShareLink --> CandidateAccess[候选人访问面试链接]
+    CandidateAccess --> StartInterview[开始面试]
+    StartInterview --> ReadQuestion[获取/语音朗读问题]
+    ReadQuestion --> RecordAnswer[录制语音回答]
+    RecordAnswer --> TranscribeAnswer[使用Whisper转录语音]
+    TranscribeAnswer --> SaveAnswer[保存答案]
+    SaveAnswer --> NextQuestion{有下一题?}
+    NextQuestion -->|是| ReadQuestion
+    NextQuestion -->|否| CompleteInterview[完成面试]
+    
+    %% 报告生成子流程
+    CompleteInterview --> ReportGeneration[面试报告生成服务]
+    ReportGeneration --> FetchInterviewData[获取面试数据]
+    FetchInterviewData --> AIEvaluation[AI评估面试表现]
+    AIEvaluation --> GeneratePDF[生成PDF报告]
+    GeneratePDF --> SaveReport[保存报告到数据库]
+    SaveReport --> ViewResult[管理员查看/下载面试报告]
+    
+    %% 结果查看
+    ViewResult --> MakeDecision{面试通过?}
+    MakeDecision -->|是| SendOffer[发送录用通知]
+    MakeDecision -->|否| SendRejection[发送拒绝通知]
+    SendOffer --> End1([结束流程])
+    SendRejection --> End2([结束流程])
+    
+    %% 定时任务
+    subgraph 后台定时任务
+        QuestionScheduler[问题生成定时任务,5分钟执行一次]
+        ReportScheduler[报告生成定时任务,5分钟执行一次]
+    end
+    
+    QuestionScheduler --> QuestionGeneration
+    ReportScheduler --> ReportGeneration
+    
+    %% 状态流转
+    class UpdateStatus1,UpdateStatus2 statusNode
+    
+    %% 样式
+    classDef statusNode fill:#f9f,stroke:#333,stroke-width:2px;
